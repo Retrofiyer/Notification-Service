@@ -1,5 +1,5 @@
 <div>
-    <h1>User Notification Microservice</h1>
+    <h1>Notification Microservice</h1>
 </div>
 
 ## About The Project
