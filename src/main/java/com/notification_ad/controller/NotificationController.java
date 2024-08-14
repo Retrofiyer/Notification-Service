@@ -1,6 +1,6 @@
 package com.notification_ad.controller;
 
-import com.notification_ad.entities.Email;
+import com.notification_ad.entities.Notification;
 import com.notification_ad.service.NotificationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -21,10 +21,10 @@ public class NotificationController {
 
     @PostMapping("/sendMessage")
     @Operation(summary = "This endpoint is used to send message for user")
-    public ResponseEntity<?> receiveRequestEmail(@RequestBody Email email) {
-        System.out.println("Email received: " + email);
+    public ResponseEntity<?> receiveRequestEmail(@RequestBody Notification notification) {
+        System.out.println("Email received: " + notification);
 
-        notificationService.sendEmail(email.getToUser(), email.getSubject(), email.getMessage());
+        notificationService.sendEmail(notification.getToUser(), notification.getSubject(), notification.getMessage());
 
         Map<String, String> response = new HashMap<>();
         response.put("status", "Send");
